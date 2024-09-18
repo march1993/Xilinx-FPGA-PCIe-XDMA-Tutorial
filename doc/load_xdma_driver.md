@@ -36,7 +36,10 @@ $ sudo rm *.ko
 $ sudo make
 ```
 
-　
+注意：如果你的 DMA 不在第一个 BAR，则需要将 `libxdma.h` 文件种宏 `XDMA_CONFIG_BAR_NUM` 修改为对应的序号，以避免卡死等情况。
+例如下图，启用了 AXI-Lite 时，DMA 处于 `BAR1`，因此需要将 `XDMA_CONFIG_BAR_NUM` 设置为 1。
+![image](https://github.com/user-attachments/assets/b3826c1b-0cd8-407e-93dc-3d112c4bcafd)
+
 
 ## 加载 XDMA 驱动
 
