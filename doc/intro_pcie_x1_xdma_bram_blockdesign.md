@@ -282,6 +282,7 @@ set_property -dict { PACKAGE_PIN AR22  IOSTANDARD LVCMOS15 } [get_ports { o_led0
 set_property -dict { PACKAGE_PIN AY35  IOSTANDARD LVCMOS18  PULLUP true } [get_ports i_pcie_rstn];   # PCIe 复位
 
 set_property PACKAGE_PIN AB8  [get_ports { i_pcie_refclkp }];     # PCIe 参考时钟
+create_clock -name sys_clk -period 10 [get_ports i_pcie_refclkp];
 
 set_property PACKAGE_PIN W2   [get_ports { o_pcie_txp[0] }];      # PCIe TX 信号 0
 #set_property PACKAGE_PIN AA2  [get_ports { o_pcie_txp[1] }];     # 未用
